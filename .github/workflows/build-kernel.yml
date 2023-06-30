@@ -65,7 +65,7 @@ jobs:
         cd $GITHUB_WORKSPACE/kernel_workspace
         if [[ ${{ env.CUSTOM_CLANG_SOURCE }} =~ git ]]; then
             if [[ ${{ env.CUSTOM_CLANG_SOURCE }} == *'.tar.gz' ]]; then
-                wget -O clang.tar.gz ${{ env.CUSTOM_CLANG_SOURCE }}
+                wget -O clang.tar.gz https://android.googlesource.com/platform/prebuilts/gas/linux-x86/+archive/refs/heads/master.tar.gz
                 mkdir clang-aosp
                 tar -C clang-aosp/ -zxvf clang.tar.gz
             else
